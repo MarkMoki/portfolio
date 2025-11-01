@@ -98,7 +98,7 @@ const Hero = () => {
               <span className="text-gray-700 dark:text-gray-300 text-sm sm:text-base truncate">LinkedIn</span>
             </motion.a>
             <motion.a
-              href="https://markmoki.vercel.app.app"
+              href="https://markmoki.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-white dark:bg-gray-800 px-4 sm:px-6 py-3 rounded-full shadow-md hover:shadow-lg dark:shadow-gray-900/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 group min-w-0 flex-shrink-0"

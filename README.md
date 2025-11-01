@@ -200,7 +200,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Moki Mark**
 - Email: moki.dev01@gmail.com
 - LinkedIn: [linkedin.com/in/markmoki](https://linkedin.com/in/markmoki)
-- Portfolio: [markmoki.vercel.app.app](https://markmoki.vercel.app.app)
+- Portfolio: [markmoki.vercel.app](https://markmoki.vercel.app)
 
 ---
 
