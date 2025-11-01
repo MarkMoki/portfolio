@@ -46,7 +46,7 @@ A modern, interactive portfolio website showcasing full-stack development skills
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
@@ -95,34 +95,50 @@ portfolio/
 ├── src/
 │   └── app/
 │       ├── components/          # Reusable UI components
-│       │   ├── AnimatedCounter.tsx
-│       │   ├── Blog.tsx
+│       │   ├── About.tsx
+│       │   ├── BackToTop.tsx
 │       │   ├── Contact.tsx
 │       │   ├── Education.tsx
 │       │   ├── Experience.tsx
 │       │   ├── FloatingElements.tsx
+│       │   ├── Footer.tsx
 │       │   ├── Hero.tsx
 │       │   ├── LoadingSkeleton.tsx
 │       │   ├── Navigation.tsx
 │       │   ├── PageTransition.tsx
 │       │   ├── ParallaxBackground.tsx
+│       │   ├── ProjectModal.tsx
 │       │   ├── Projects.tsx
+│       │   ├── ProjectSearch.tsx
 │       │   ├── ScrollProgress.tsx
 │       │   ├── SectionReveal.tsx
 │       │   ├── Services.tsx
 │       │   ├── SkillProgress.tsx
 │       │   ├── Skills.tsx
-│       │   ├── Testimonials.tsx
 │       │   ├── ThemeToggle.tsx
-│       │   └── About.tsx
+│       │   └── Tooltip.tsx
+│       ├── favicon.ico
 │       ├── globals.css          # Global styles and Tailwind imports
 │       ├── layout.tsx           # Root layout with metadata
 │       └── page.tsx             # Main page component
 ├── public/                      # Static assets
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── linkedin-profile.jpg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── .gitignore
+├── eslint.config.mjs
+├── next.config.ts
 ├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── README.md
 ├── tailwind.config.js
-├── next.config.js
-└── README.md
+├── tsconfig.json
+├── eslint.config.mjs
+└── .gitignore
 ```
 
 ## 🎯 Key Components

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SkillProgress from './SkillProgress';
+import Tooltip from './Tooltip';
 
 const Skills = () => {
   const skillCategories = [
@@ -129,13 +130,20 @@ const Skills = () => {
               </div>
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <SkillProgress
+                  <Tooltip
                     key={skillIndex}
-                    skill={skill.name}
-                    level={skill.level}
-                    color={category.color}
-                    delay={skillIndex * 0.1}
-                  />
+                    content={`${skill.name}: ${skill.level}% proficiency`}
+                    position="right"
+                  >
+                    <div>
+                      <SkillProgress
+                        skill={skill.name}
+                        level={skill.level}
+                        color={category.color}
+                        delay={skillIndex * 0.1}
+                      />
+                    </div>
+                  </Tooltip>
                 ))}
               </div>
             </motion.div>

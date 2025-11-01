@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Tooltip from './Tooltip';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +31,15 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-4 sm:ml-10 flex items-baseline space-x-1 sm:space-x-2 lg:space-x-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 lg:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900/20 relative group whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                >
-                  {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                <Tooltip key={item.name} content={`Navigate to ${item.name} section`} position="bottom">
+                  <a
+                    href={item.href}
+                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-2 sm:px-3 lg:px-4 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 hover:bg-blue-50 dark:hover:bg-blue-900/20 relative group whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    {item.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+                  </a>
+                </Tooltip>
               ))}
             </div>
           </div>

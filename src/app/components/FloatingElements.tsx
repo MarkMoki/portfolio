@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
-import { FaRocket, FaCode, FaLightbulb, FaHeart } from 'react-icons/fa';
+import { FaArrowUp } from 'react-icons/fa';
 import { useEffect, useState, useMemo } from 'react';
 
 const FloatingElements = () => {
@@ -42,10 +42,7 @@ const FloatingElements = () => {
   if (prefersReducedMotion) return null;
 
   const floatingElements = [
-    { icon: <FaRocket className="text-blue-500 text-xl sm:text-2xl" />, delay: 0, xOffset: 20, yOffset: 100 },
-    { icon: <FaCode className="text-green-500 text-lg sm:text-xl" />, delay: 2, xOffset: -20, yOffset: 200 },
-    { icon: <FaLightbulb className="text-yellow-500 text-base sm:text-lg" />, delay: 4, xOffset: 40, yOffset: 300 },
-    { icon: <FaHeart className="text-red-500 text-lg sm:text-xl" />, delay: 1, xOffset: -40, yOffset: 150 },
+    { icon: <FaArrowUp className="text-blue-500 text-xl sm:text-2xl" />, delay: 0, xOffset: 20, yOffset: 100 },
   ];
 
   return (
