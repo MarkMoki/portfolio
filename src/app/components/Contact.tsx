@@ -70,6 +70,36 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
 
             <div className="space-y-6">
+              
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <FaLinkedin className="text-blue-600 text-lg" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">LinkedIn</p>
+                  <a
+                    href="https://linkedin.com/in/markmoki"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 hover:text-blue-600 transition-colors duration-200"
+                  >
+                    linkedin.com/in/markmoki
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <FaWhatsapp className="text-green-600 text-lg" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500">WhatsApp</p>
+                  <a href="https://wa.me/254759215000" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-green-600 transition-colors duration-200">
+                    +254 759 215 000
+                  </a>
+                </div>
+              </div>
+
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                   <FaPhone className="text-blue-600 text-lg" />
@@ -96,23 +126,6 @@ const Contact = () => {
 
               <div className="flex items-center gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <FaLinkedin className="text-blue-600 text-lg" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">LinkedIn</p>
-                  <a
-                    href="https://linkedin.com/in/markmoki"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-900 hover:text-blue-600 transition-colors duration-200"
-                  >
-                    linkedin.com/in/markmoki
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                   <FaGlobe className="text-blue-600 text-lg" />
                 </div>
                 <div>
@@ -124,18 +137,6 @@ const Contact = () => {
                     className="text-gray-900 hover:text-blue-600 transition-colors duration-200"
                   >
                     markmoki.vercel.app
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <FaWhatsapp className="text-green-600 text-lg" />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-500">WhatsApp</p>
-                  <a href="https://wa.me/254759215000" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-green-600 transition-colors duration-200">
-                    +254 759 215 000
                   </a>
                 </div>
               </div>
