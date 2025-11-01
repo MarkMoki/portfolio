@@ -212,55 +212,73 @@ const Projects = () => {
                     <FaCode className="text-sm" />
                   </motion.button>
                 </motion.div>
-                <div className="p-6 sm:p-8">
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                <div className="p-6 sm:p-8 flex flex-col h-full">
+                  <div className="flex-grow">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
-                  <div className="mb-4 sm:mb-6">
-                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.features.slice(0, 3).map((feature, featIndex) => (
-                        <li key={featIndex} className="flex items-start">
-                          <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                          <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="mb-4 sm:mb-6">
-                    <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Tooltip
-                          key={techIndex}
-                          content={`Technology: ${tech}`}
-                          position="top"
-                        >
-                          <span
-                            className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium cursor-pointer hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200"
-                          >
-                            {tech}
-                          </span>
-                        </Tooltip>
-                      ))}
+                    <div className="mb-4 sm:mb-6">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
+                      <ul className="space-y-2">
+                        {project.features.slice(0, 3).map((feature, featIndex) => (
+                          <li key={featIndex} className="flex items-start">
+                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                            <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+
+                    <div className="mb-4 sm:mb-6">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <Tooltip
+                            key={techIndex}
+                            content={`Technology: ${tech}`}
+                            position="top"
+                          >
+                            <span
+                              className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium cursor-pointer hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors duration-200"
+                            >
+                              {tech}
+                            </span>
+                          </Tooltip>
+                        ))}
+                      </div>
+                    </div>
+
+                    {project.links.length > 0 && (
+                      <div className="flex gap-4 mb-4">
+                        {project.links.map((link, linkIndex) => (
+                          <a
+                            key={linkIndex}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                          >
+                            {link.type === 'demo' ? <FaExternalLinkAlt /> : <FaGithub />}
+                            <span>{link.label}</span>
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  {project.links.length > 0 && (
-                    <div className="flex gap-4">
-                      {project.links.map((link, linkIndex) => (
-                        <a
-                          key={linkIndex}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-200"
-                        >
-                          {link.type === 'demo' ? <FaExternalLinkAlt /> : <FaGithub />}
-                          <span>{link.label}</span>
-                        </a>
-                      ))}
+                  {(project.title === 'FitLetter' || project.title === 'Flutbuilder') && project.links.find(l => l.type === 'demo') && (
+                    <div className="mt-auto">
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                        <span className="font-medium">URL Preview:</span>
+                      </div>
+                      <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+                        <iframe
+                          src={project.links.find(l => l.type === 'demo')?.url}
+                          className="w-full h-48 bg-white dark:bg-gray-900"
+                          title={`${project.title} Preview`}
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
