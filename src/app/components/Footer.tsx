@@ -21,7 +21,7 @@ const Footer = () => {
               LinkedIn
             </a>
             <a
-              href="https://moki.vercel.app"
+              href="https://markmoki.vercel.app.app"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors duration-200"

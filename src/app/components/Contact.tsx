@@ -118,12 +118,12 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-gray-500">Portfolio</p>
                   <a
-                    href="https://moki.vercel.app"
+                    href="https://markmoki.vercel.app.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-900 hover:text-blue-600 transition-colors duration-200"
                   >
-                    moki.vercel.app
+                    markmoki.vercel.app.app
                   </a>
                 </div>
               </div>

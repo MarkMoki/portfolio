@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Moki Mark - Full Stack Developer Portfolio",
     description: "Professional portfolio showcasing innovative web and mobile applications built with modern technologies.",
-    url: "https://moki.vercel.app",
+    url: "https://markmoki.vercel.app.app",
     siteName: "Moki Mark Portfolio",
     images: [
       {
