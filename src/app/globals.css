@@ -2,7 +2,20 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a202c;
+  --primary: #2b6cb0;
+  --primary-dark: #1a365d;
+  --secondary: #805ad5;
+  --accent: #ed8936;
+  --success: #38a169;
+  --warning: #d69e2e;
+  --error: #e53e3e;
+  --surface: #f7fafc;
+  --surface-dark: #1a202c;
+  --muted: #718096;
+  --muted-foreground: #a0aec0;
+  --border: #e2e8f0;
+  --border-dark: #4a5568;
 }
 
 @theme inline {
@@ -14,13 +27,164 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a202c;
+    --foreground: #f7fafc;
+    --muted: #a0aec0;
+    --muted-foreground: #cbd5e1;
+    --border: #4a5568;
+    --border-dark: #718096;
   }
+}
+
+.dark {
+  --background: #1a202c;
+  --foreground: #f7fafc;
+  --muted: #a0aec0;
+  --muted-foreground: #cbd5e1;
+  --border: #4a5568;
+  --border-dark: #718096;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Enhanced color scheme improvements */
+.light-mode-gradient {
+  background: linear-gradient(135deg, #2b6cb0 0%, #805ad5 100%);
+}
+
+.dark-mode-gradient {
+  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, #ed8936 0%, #e53e3e 100%);
+}
+
+.dark-accent-gradient {
+  background: linear-gradient(135deg, #805ad5 0%, #ed8936 100%);
+}
+
+/* Improved text contrast */
+.text-high-contrast {
+  color: #1a202c;
+}
+
+.dark .text-high-contrast {
+  color: #f7fafc;
+}
+
+.text-medium-contrast {
+  color: #718096;
+}
+
+.dark .text-medium-contrast {
+  color: #a0aec0;
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+
+  .hover\:shadow-lg:hover,
+  .hover\:shadow-xl:hover {
+    box-shadow: none;
+  }
+
+  .group:hover .group-hover\:scale-105 {
+    transform: none;
+  }
+
+  .group:hover .group-hover\:translate-x-1 {
+    transform: none;
+  }
+
+  .group:hover .group-hover\:rotate-12 {
+    transform: none;
+  }
+
+  .group:hover .group-hover\:bounce {
+    animation: none;
+  }
+
+  .group:hover .group-hover\:animate-spin {
+    animation: none;
+  }
+
+  .group:hover .group-hover\:text-blue-500 {
+    color: inherit;
+  }
+
+  /* Add touch feedback */
+  button,
+  a[role="button"],
+  [role="button"] {
+    -webkit-tap-highlight-color: rgba(59, 130, 246, 0.1);
+    touch-action: manipulation;
+  }
+
+  /* Improve touch targets */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.focus\:ring-2:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
