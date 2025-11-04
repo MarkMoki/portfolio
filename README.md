@@ -11,6 +11,7 @@ A modern, interactive portfolio website showcasing full-stack development skills
 - **Responsive Design** - Optimized for all devices (mobile, tablet, desktop)
 - **Smooth Animations** - Powered by Framer Motion for fluid interactions
 - **Professional Typography** - Geist font family for clean, modern text
+- **Enhanced Text Contrast** - Improved visibility with custom font weights and colors
 
 ### 🎭 **Advanced Animations & Interactions**
 - **Page Transition Animations** - Smooth page transitions with fade and scale effects
@@ -25,14 +26,15 @@ A modern, interactive portfolio website showcasing full-stack development skills
 - **Skill Progress Bars** - Animated progress bars showing proficiency levels
 - **Interactive Project Cards** - Hover effects with preview and code buttons
 - **Loading Skeletons** - Smooth loading states for better perceived performance
+- **Optimized Card Layouts** - Improved spacing and height management for better content display
 
 ### 📝 **Content Sections**
 - **Hero Section** - Professional introduction with contact buttons
-- **About Section** - Personal story, values, and journey timeline
+- **About Section** - Personal story, values, and journey timeline with enhanced visibility
 - **Services Section** - Detailed service offerings with features
-- **Skills Section** - Technical expertise with animated progress bars
+- **Skills Section** - Technical expertise with animated progress bars and optimized card layouts
 - **Experience Section** - Professional background and achievements
-- **Projects Section** - Featured work with interactive cards
+- **Projects Section** - Featured work with interactive cards and reduced heights
 - **Testimonials Section** - Client feedback with animated stats
 - **Blog Section** - Technical insights and articles
 - **Contact Section** - Functional contact form with validation
@@ -43,6 +45,7 @@ A modern, interactive portfolio website showcasing full-stack development skills
 - **Accessibility** - ARIA labels, keyboard navigation, screen reader support
 - **TypeScript** - Type-safe development with full IntelliSense support
 - **Tailwind CSS** - Utility-first styling with custom dark mode support
+- **Visitor Analytics** - Comprehensive tracking system with Supabase integration
 
 ## 🛠️ Tech Stack
 
@@ -51,6 +54,7 @@ A modern, interactive portfolio website showcasing full-stack development skills
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **Icons:** React Icons
+- **Database:** Supabase (for visitor analytics)
 - **Deployment:** Vercel/Netlify ready
 
 ## 🚀 Getting Started
@@ -62,65 +66,79 @@ A modern, interactive portfolio website showcasing full-stack development skills
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/portfolio.git
-   cd portfolio
-   ```
+    ```bash
+    git clone https://github.com/yourusername/portfolio.git
+    cd portfolio
+    ```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
+3. **Set up environment variables**
+    Create a `.env.local` file in the root directory:
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+4. **Set up the database**
+    Run the SQL script in `visitors_table.sql` in your Supabase SQL editor to create the visitor tracking table.
+
+5. **Run the development server**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+
+6. **Open your browser**
+    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
 
 ```
 portfolio/
 ├── src/
-│   └── app/
-│       ├── components/          # Reusable UI components
-│       │   ├── About.tsx
-│       │   ├── BackToTop.tsx
-│       │   ├── Contact.tsx
-│       │   ├── Education.tsx
-│       │   ├── Experience.tsx
-│       │   ├── FloatingElements.tsx
-│       │   ├── Footer.tsx
-│       │   ├── Hero.tsx
-│       │   ├── LoadingSkeleton.tsx
-│       │   ├── Navigation.tsx
-│       │   ├── PageTransition.tsx
-│       │   ├── ParallaxBackground.tsx
-│       │   ├── ProjectModal.tsx
-│       │   ├── Projects.tsx
-│       │   ├── ProjectSearch.tsx
-│       │   ├── ScrollProgress.tsx
-│       │   ├── SectionReveal.tsx
-│       │   ├── Services.tsx
-│       │   ├── SkillProgress.tsx
-│       │   ├── Skills.tsx
-│       │   ├── ThemeToggle.tsx
-│       │   └── Tooltip.tsx
-│       ├── favicon.ico
-│       ├── globals.css          # Global styles and Tailwind imports
-│       ├── layout.tsx           # Root layout with metadata
-│       └── page.tsx             # Main page component
+│   ├── app/
+│   │   ├── components/          # Reusable UI components
+│   │   │   ├── About.tsx
+│   │   │   ├── BackToTop.tsx
+│   │   │   ├── Contact.tsx
+│   │   │   ├── Education.tsx
+│   │   │   ├── Experience.tsx
+│   │   │   ├── FloatingElements.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── LoadingSkeleton.tsx
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── PageTransition.tsx
+│   │   │   ├── ParallaxBackground.tsx
+│   │   │   ├── ProjectModal.tsx
+│   │   │   ├── Projects.tsx
+│   │   │   ├── ProjectSearch.tsx
+│   │   │   ├── ScrollProgress.tsx
+│   │   │   ├── SectionReveal.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── SkillProgress.tsx
+│   │   │   ├── Skills.tsx
+│   │   │   ├── ThemeToggle.tsx
+│   │   │   ├── Tooltip.tsx
+│   │   │   └── VisitorTracker.tsx  # New: Visitor analytics component
+│   │   ├── lib/
+│   │   │   └── supabase.ts         # New: Supabase client and tracking functions
+│   │   ├── favicon.ico
+│   │   ├── globals.css          # Global styles and Tailwind imports
+│   │   ├── layout.tsx           # Root layout with metadata
+│   │   └── page.tsx             # Main page component
+│   └── .env.local               # Environment variables (create this)
 ├── public/                      # Static assets
 │   ├── file.svg
 │   ├── globe.svg
@@ -128,6 +146,7 @@ portfolio/
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
+├── visitors_table.sql           # New: Database schema for visitor tracking
 ├── .gitignore
 ├── eslint.config.mjs
 ├── next.config.ts
@@ -137,7 +156,6 @@ portfolio/
 ├── README.md
 ├── tailwind.config.js
 ├── tsconfig.json
-├── eslint.config.mjs
 └── .gitignore
 ```
 
@@ -164,6 +182,9 @@ Reveals content sections with customizable animations as they enter viewport.
 ### FloatingElements
 Mouse-responsive floating icons and particles for visual interest.
 
+### VisitorTracker
+Tracks comprehensive visitor analytics including geolocation, device info, session data, and user behavior. Automatically collects data on page visits, route changes, and tab visibility.
+
 ## 🔧 Customization
 
 ### Colors
@@ -174,6 +195,9 @@ Edit personal information, projects, and content in the respective component fil
 
 ### Animations
 Modify animation parameters in Framer Motion components for different effects.
+
+### Analytics
+The visitor tracking system automatically collects comprehensive analytics. To customize what data is tracked, modify the `trackVisitor` function in `src/app/lib/supabase.ts`.
 
 ## 📱 Responsive Design
 
