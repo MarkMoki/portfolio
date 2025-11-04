@@ -88,7 +88,7 @@ body {
 }
 
 .dark-mode-gradient {
-  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+  background: linear-gradient(135deg, #09111d 0%, #1d232e 100%);
 }
 
 .accent-gradient {
@@ -109,11 +109,11 @@ body {
 }
 
 .text-medium-contrast {
-  color: #718096;
+  color: #202429;
 }
 
 .dark .text-medium-contrast {
-  color: #a0aec0;
+  color: #1b1c1f;
 }
 
 /* Touch-friendly interactions */
