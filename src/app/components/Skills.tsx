@@ -119,16 +119,16 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 h-full flex flex-col"
               variants={itemVariants}
               whileHover={{ y: -5 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-4 flex-shrink-0">
                 <div className={`w-4 h-4 rounded-full ${category.color} mr-3`}></div>
                 <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2 flex-grow overflow-y-auto">
                 {category.skills.map((skill, skillIndex) => (
                   <Tooltip
                     key={skillIndex}

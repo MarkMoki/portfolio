@@ -212,26 +212,26 @@ const Projects = () => {
                     <FaCode className="text-sm" />
                   </motion.button>
                 </motion.div>
-                <div className="p-6 sm:p-8 flex flex-col h-full">
+                <div className="p-4 sm:p-6 flex flex-col h-full">
                   <div className="flex-grow">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
-                    <div className="mb-4 sm:mb-6">
-                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
-                      <ul className="space-y-2">
+                    <div className="mb-3 sm:mb-4">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
+                      <ul className="space-y-1">
                         {project.features.slice(0, 3).map((feature, featIndex) => (
                           <li key={featIndex} className="flex items-start">
-                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                            <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-1.5 mr-3"></div>
                             <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="mb-4 sm:mb-6">
-                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mb-3 sm:mb-4">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Technologies:</h4>
+                      <div className="flex flex-wrap gap-1.5">
                         {project.technologies.map((tech, techIndex) => (
                           <Tooltip
                             key={techIndex}
@@ -249,7 +249,7 @@ const Projects = () => {
                     </div>
 
                     {project.links.length > 0 && (
-                      <div className="flex gap-4 mb-4">
+                      <div className="flex gap-3 mb-3">
                         {project.links.map((link, linkIndex) => (
                           <a
                             key={linkIndex}
@@ -268,13 +268,13 @@ const Projects = () => {
 
                   {(project.title === 'FitLetter' || project.title === 'Flutbuilder') && project.links.find(l => l.type === 'demo') && (
                     <div className="mt-auto">
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">
+                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
                         <span className="font-medium">URL Preview:</span>
                       </div>
                       <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
                         <iframe
                           src={project.links.find(l => l.type === 'demo')?.url}
-                          className="w-full h-48 bg-white dark:bg-gray-900"
+                          className="w-full h-40 bg-white dark:bg-gray-900"
                           title={`${project.title} Preview`}
                           loading="lazy"
                         />

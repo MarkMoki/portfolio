@@ -11,10 +11,12 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import VisitorTracker from './components/VisitorTracker';
 
 export default function Home() {
   return (
     <PageTransition>
+      <VisitorTracker />
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
         <Navigation />

@@ -57,11 +57,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionReveal className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-high-contrast mb-4">About Me</h2>
-          <p className="text-xl text-medium-contrast max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Passionate about technology and innovation, I transform ideas into digital reality through code and creativity.
           </p>
         </SectionReveal>
@@ -75,7 +75,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">My Story</h3>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Story</h3>
             <p className="text-gray-700 leading-relaxed mb-4">
               I'm a dedicated Full Stack & Mobile Developer based in Nairobi, Kenya, with a passion for creating
               innovative digital solutions that make a difference. My journey in technology began with curiosity
@@ -101,7 +101,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Core Values</h3>
+            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">Core Values</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {values.map((value, index) => (
                 <motion.div
@@ -127,7 +127,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">My Journey</h3>
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white text-center mb-12">My Journey</h3>
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200 hidden md:block"></div>
             <div className="space-y-8">
@@ -167,8 +167,8 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Let's Build Something Amazing</h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Let's Build Something Amazing</h3>
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
             Whether you have a project in mind or just want to connect, I'd love to hear from you.
           </p>
