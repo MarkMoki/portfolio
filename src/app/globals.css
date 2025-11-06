@@ -1,6 +1,15 @@
+/* ==========================================================================
+   Tailwind CSS Import
+   ========================================================================== */
+
 @import "tailwindcss";
 
+/* ==========================================================================
+   CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
 :root {
+  /* Base Colors */
   --background: #ffffff;
   --foreground: #1a202c;
   --primary: #2b6cb0;
@@ -12,26 +21,30 @@
   --error: #e53e3e;
   --surface: #f7fafc;
   --surface-dark: #1a202c;
-  --muted: #718096;
-  --muted-foreground: #a0aec0;
+
+  /* Neutral Colors */
+  --muted: #000000;
+  --muted-foreground: #0a0b0c;
   --border: #e2e8f0;
-  --border-dark: #4a5568;
+  --border-dark: #000000;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', monospace;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark Mode Variables */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #1a202c;
     --foreground: #f7fafc;
-    --muted: #a0aec0;
+    --muted: #021630;
     --muted-foreground: #cbd5e1;
-    --border: #4a5568;
+    --border: #000000;
     --border-dark: #718096;
   }
 }
@@ -39,26 +52,58 @@
 .dark {
   --background: #1a202c;
   --foreground: #f7fafc;
-  --muted: #a0aec0;
+  --muted: #021630;
   --muted-foreground: #cbd5e1;
-  --border: #4a5568;
+  --border: #000000;
   --border-dark: #718096;
+}
+
+/* ==========================================================================
+   Tailwind Theme Configuration
+   ========================================================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Custom scrollbar for dark mode */
+/* ==========================================================================
+   Scrollbar Customization
+   ========================================================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7fafc;
+  background: var(--surface);
+  border-radius: 4px;
 }
 
 .dark ::-webkit-scrollbar-track {
@@ -66,25 +111,29 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--muted-foreground);
   border-radius: 4px;
+  transition: background-color var(--transition-fast);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #4a5568;
+  background: var(--border);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0;
+  background: var(--muted);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #718096;
+  background: var(--border-dark);
 }
 
-/* Enhanced color scheme improvements */
+/* ==========================================================================
+   Gradient Utilities
+   ========================================================================== */
+
 .light-mode-gradient {
-  background: linear-gradient(135deg, #2b6cb0 0%, #805ad5 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
 .dark-mode-gradient {
@@ -92,20 +141,19 @@ body {
 }
 
 .accent-gradient {
-  background: linear-gradient(135deg, #ed8936 0%, #e53e3e 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--error) 100%);
 }
 
 .dark-accent-gradient {
-  background: linear-gradient(135deg, #805ad5 0%, #ed8936 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
 }
 
-/* Improved text contrast */
+/* ==========================================================================
+   Text Contrast Utilities
+   ========================================================================== */
+
 .text-high-contrast {
-  color: #1a202c;
-}
-
-.dark .text-high-contrast {
-  color: #f7fafc;
+  color: var(--foreground);
 }
 
 .text-medium-contrast {
@@ -116,10 +164,14 @@ body {
   color: #1b1c1f;
 }
 
-/* Touch-friendly interactions */
+/* ==========================================================================
+   Touch-Friendly Interactions
+   ========================================================================== */
+
 @media (hover: none) and (pointer: coarse) {
-  /* Remove hover effects on touch devices */
-  .hover\:scale-105:hover {
+  /* Disable hover effects on touch devices */
+  .hover\:scale-105:hover,
+  .group:hover .group-hover\:scale-105 {
     transform: none;
   }
 
@@ -128,22 +180,12 @@ body {
     box-shadow: none;
   }
 
-  .group:hover .group-hover\:scale-105 {
-    transform: none;
-  }
-
-  .group:hover .group-hover\:translate-x-1 {
-    transform: none;
-  }
-
+  .group:hover .group-hover\:translate-x-1,
   .group:hover .group-hover\:rotate-12 {
     transform: none;
   }
 
-  .group:hover .group-hover\:bounce {
-    animation: none;
-  }
-
+  .group:hover .group-hover\:bounce,
   .group:hover .group-hover\:animate-spin {
     animation: none;
   }
@@ -152,7 +194,7 @@ body {
     color: inherit;
   }
 
-  /* Add touch feedback */
+  /* Enhanced touch feedback */
   button,
   a[role="button"],
   [role="button"] {
@@ -160,7 +202,7 @@ body {
     touch-action: manipulation;
   }
 
-  /* Improve touch targets */
+  /* Minimum touch target sizes */
   button,
   a,
   input,
@@ -171,13 +213,25 @@ body {
   }
 }
 
-/* Focus styles for keyboard navigation */
+/* ==========================================================================
+   Focus Styles for Accessibility
+   ========================================================================== */
+
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .focus\:ring-2:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* Reduce motion for users who prefer it */
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -189,15 +243,10 @@ body {
   }
 }
 
-/* Enhanced typography for better readability */
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* ==========================================================================
+   Responsive Typography
+   ========================================================================== */
 
-/* Responsive typography */
 @media (max-width: 640px) {
   h1 { font-size: 2.5rem; line-height: 1.2; }
   h2 { font-size: 2rem; line-height: 1.3; }
@@ -219,42 +268,45 @@ body {
   p { font-size: 1.25rem; line-height: 1.5; }
 }
 
-/* Improved focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+/* ==========================================================================
+   Skip Link for Screen Readers
+   ========================================================================== */
 
-/* Skip link for screen readers */
 .skip-link {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #000;
-  color: #fff;
+  background: var(--foreground);
+  color: var(--background);
   padding: 8px;
   text-decoration: none;
   z-index: 100;
+  transition: top var(--transition-fast);
 }
 
 .skip-link:focus {
   top: 6px;
 }
 
-/* High contrast mode support */
+/* ==========================================================================
+   High Contrast Mode Support
+   ========================================================================== */
+
 @media (prefers-contrast: high) {
-  .text-gray-600 { color: #000; }
-  .text-gray-300 { color: #fff; }
-  .bg-gray-50 { background-color: #fff; }
-  .bg-gray-800 { background-color: #000; }
+  .text-gray-300 { color: var(--foreground); }
+  .text-gray-300 { color: var(--background); }
+  .bg-gray-50 { background-color: var(--background); }
+  .bg-gray-800 { background-color: var(--foreground); }
 }
 
-/* Increase font weight for grey text elements */
+/* ==========================================================================
+    Gray Text Enhancements
+    ========================================================================== */
+
 .text-gray-400,
-.text-gray-500,
-.text-gray-600,
-.text-gray-700 {
+.text-gray-300,
+.text-gray-300,
+.text-gray-300 {
   font-weight: 500;
 }
 
@@ -263,19 +315,15 @@ body {
   font-weight: 500;
 }
 
-/* Make grey text much whiter in dark mode */
-.dark .text-gray-400 {
-  color: #e2e8f0 !important;
-}
-
-.dark .text-gray-500 {
-  color: #cbd5e1 !important;
-}
-
-.dark .text-gray-600 {
-  color: #94a3b8 !important;
-}
-
-.dark .text-gray-700 {
-  color: #64748b !important;
+/* All gray text set to solid white in dark mode */
+.dark .text-gray-100,
+.dark .text-gray-200,
+.dark .text-gray-300,
+.dark .text-gray-400,
+.dark .text-gray-300,
+.dark .text-gray-300,
+.dark .text-gray-300,
+.dark .text-gray-800,
+.dark .text-gray-900 {
+  color: white;
 }

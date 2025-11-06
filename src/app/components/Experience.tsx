@@ -56,8 +56,8 @@ const Experience = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-300 mb-4">Professional Experience</h2>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             A track record of delivering high-impact solutions across diverse projects
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ const Experience = () => {
                 {exp.achievements.map((achievement, achIndex) => (
                   <li key={achIndex} className="flex items-start">
                     <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4"></div>
-                    <p className="text-gray-700 leading-relaxed">{achievement}</p>
+                    <p className="text-gray-300 leading-relaxed">{achievement}</p>
                   </li>
                 ))}
               </ul>

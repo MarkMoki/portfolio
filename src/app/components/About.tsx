@@ -61,7 +61,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionReveal className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-300 max-w-3xl mx-auto">
             Passionate about technology and innovation, I transform ideas into digital reality through code and creativity.
           </p>
         </SectionReveal>
@@ -76,17 +76,17 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">My Story</h3>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               I'm a dedicated Full Stack & Mobile Developer based in Nairobi, Kenya, with a passion for creating
               innovative digital solutions that make a difference. My journey in technology began with curiosity
               and has evolved into a career focused on delivering high-quality, scalable applications.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-gray-300 leading-relaxed mb-4">
               With expertise spanning web and mobile development, I specialize in building robust backend systems,
               responsive user interfaces, and seamless user experiences. I believe in the power of technology to
               solve real-world problems and am committed to staying at the forefront of industry trends.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects,
               or sharing knowledge with the developer community. I'm always excited to take on new challenges and
               collaborate on projects that push the boundaries of what's possible.
@@ -112,7 +112,7 @@ const About = () => {
                 >
                   <div className="mb-4">{value.icon}</div>
                   <h4 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{value.description}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -148,7 +148,7 @@ const About = () => {
                         </div>
                         <h4 className="text-xl font-semibold text-gray-900">{item.title}</h4>
                       </div>
-                      <p className="text-gray-600">{item.description}</p>
+                      <p className="text-gray-300">{item.description}</p>
                     </div>
                   </div>
                   <div className="hidden md:block w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div>
@@ -168,7 +168,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Let's Build Something Amazing</h3>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
             Whether you have a project in mind or just want to connect, I'd love to hear from you.
           </p>

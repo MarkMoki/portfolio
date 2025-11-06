@@ -80,7 +80,7 @@ const ProjectSearch = ({ onSearch, onFilter, availableTechnologies }: ProjectSea
         {(searchQuery || selectedTechnologies.length > 0) && (
           <motion.button
             onClick={clearFilters}
-            className="px-4 py-3 text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200"
+            className="px-4 py-3 text-gray-300 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -107,7 +107,7 @@ const ProjectSearch = ({ onSearch, onFilter, availableTechnologies }: ProjectSea
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                   selectedTechnologies.includes(tech)
                     ? 'bg-blue-500 text-white'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-300 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

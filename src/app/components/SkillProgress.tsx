@@ -27,8 +27,8 @@ const SkillProgress = ({ skill, level, color = 'bg-blue-500', delay = 0 }: Skill
   return (
     <div ref={ref} className="mb-6">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 dark:text-gray-300 font-medium">{skill}</span>
-        <span className="text-gray-500 dark:text-gray-400 text-sm">{animatedLevel}%</span>
+        <span className="text-gray-300 dark:text-gray-300 font-medium">{skill}</span>
+        <span className="text-gray-300 dark:text-gray-400 text-sm">{animatedLevel}%</span>
       </div>
       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
         <motion.div

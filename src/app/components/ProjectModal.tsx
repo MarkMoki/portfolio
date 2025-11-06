@@ -65,7 +65,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors duration-200"
                 aria-label="Close modal"
               >
-                <FaTimes className="text-gray-500 dark:text-gray-400" />
+                <FaTimes className="text-gray-300 dark:text-gray-400" />
               </button>
             </div>
 
@@ -87,7 +87,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               {/* Description */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Project Overview</h3>
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{project.description}</p>
+                <p className="text-gray-300 dark:text-gray-300 leading-relaxed">{project.description}</p>
               </div>
 
               {/* Features */}
@@ -97,7 +97,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                   {project.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      <span className="text-gray-300 dark:text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>

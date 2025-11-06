@@ -138,7 +138,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Services & Expertise</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
             Comprehensive software development services tailored to bring your ideas to life with modern technologies and best practices.
           </p>
         </motion.div>
@@ -161,7 +161,7 @@ const Services = () => {
             >
               <div className="mb-4 sm:mb-6">{service.icon}</div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{service.description}</p>
+              <p className="text-gray-300 dark:text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{service.description}</p>
 
               <div className="mb-4 sm:mb-6">
                 <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-3">What I Offer:</h4>
@@ -169,7 +169,7 @@ const Services = () => {
                   {service.features.slice(0, 3).map((feature, featIndex) => (
                     <li key={featIndex} className="flex items-start">
                       <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
-                      <span className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{feature}</span>
+                      <span className="text-gray-300 dark:text-gray-400 text-xs sm:text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -202,7 +202,7 @@ const Services = () => {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">My Development Process</h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-800 max-w-2xl mx-auto">
               A proven methodology that ensures quality, efficiency, and successful project delivery.
             </p>
           </div>
@@ -221,7 +221,7 @@ const Services = () => {
                   {step.step}
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <p className="text-gray-800 leading-relaxed">{step.description}</p>
               </motion.div>
             ))}
           </div>

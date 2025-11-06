@@ -20,8 +20,8 @@ const Education = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Education</h2>
-          <p className="text-xl text-gray-600">
+          <h2 className="text-4xl font-bold text-gray-300 mb-4">Education</h2>
+          <p className="text-xl text-gray-300">
             Academic foundation in computer science and software development
           </p>
         </motion.div>
@@ -46,7 +46,7 @@ const Education = () => {
             </div>
           </div>
 
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-800 leading-relaxed">
             {education.details}
           </p>
         </motion.div>

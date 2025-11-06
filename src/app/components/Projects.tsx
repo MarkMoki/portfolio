@@ -136,8 +136,8 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-300 mb-4">Featured Projects</h2>
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Innovative solutions built with cutting-edge technologies and creative problem-solving
           </p>
         </motion.div>
@@ -215,7 +215,7 @@ const Projects = () => {
                 <div className="p-4 sm:p-6 flex flex-col h-full">
                   <div className="flex-grow">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
+                    <p className="text-gray-300 dark:text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">{project.description}</p>
 
                     <div className="mb-3 sm:mb-4">
                       <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">Key Features:</h4>
@@ -268,7 +268,7 @@ const Projects = () => {
 
                   {(project.title === 'FitLetter' || project.title === 'Flutbuilder') && project.links.find(l => l.type === 'demo') && (
                     <div className="mt-auto">
-                      <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                      <div className="text-xs text-gray-300 dark:text-gray-400 mb-1">
                         <span className="font-medium">URL Preview:</span>
                       </div>
                       <div className="rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
@@ -291,8 +291,8 @@ const Projects = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="text-gray-500 dark:text-gray-400 text-lg mb-2">No projects found</div>
-              <div className="text-gray-400 dark:text-gray-500 text-sm">Try adjusting your search or filter criteria</div>
+              <div className="text-gray-300 dark:text-gray-400 text-lg mb-2">No projects found</div>
+              <div className="text-gray-400 dark:text-gray-300 text-sm">Try adjusting your search or filter criteria</div>
             </motion.div>
           )}
         </motion.div>

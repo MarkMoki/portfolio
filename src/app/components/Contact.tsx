@@ -52,8 +52,8 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-300 mb-4">Let's Work Together</h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Ready to bring your ideas to life? I'm always excited to take on new challenges and collaborate on innovative projects.
           </p>
         </motion.div>
@@ -76,7 +76,7 @@ const Contact = () => {
                   <FaLinkedin className="text-blue-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">LinkedIn</p>
+                  <p className="text-sm text-gray-300">LinkedIn</p>
                   <a
                     href="https://linkedin.com/in/markmoki"
                     target="_blank"
@@ -93,7 +93,7 @@ const Contact = () => {
                   <FaWhatsapp className="text-green-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">WhatsApp</p>
+                  <p className="text-sm text-gray-300">WhatsApp</p>
                   <a href="https://wa.me/254759215000" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-green-600 transition-colors duration-200">
                     +254 759 215 000
                   </a>
@@ -105,7 +105,7 @@ const Contact = () => {
                   <FaPhone className="text-blue-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Phone</p>
+                  <p className="text-sm text-gray-300">Phone</p>
                   <a href="tel:+254794464025" className="text-gray-900 hover:text-blue-600 transition-colors duration-200">
                     +254 794 464 025
                   </a>
@@ -117,7 +117,7 @@ const Contact = () => {
                   <FaEnvelope className="text-blue-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Email</p>
+                  <p className="text-sm text-gray-300">Email</p>
                   <a href="mailto:moki.dev01@gmail.com" className="text-gray-900 hover:text-blue-600 transition-colors duration-200">
                     moki.dev01@gmail.com
                   </a>
@@ -129,7 +129,7 @@ const Contact = () => {
                   <FaGlobe className="text-blue-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Portfolio</p>
+                  <p className="text-sm text-gray-300">Portfolio</p>
                   <a
                     href="https://markmoki.vercel.app"
                     target="_blank"
@@ -146,7 +146,7 @@ const Contact = () => {
                   <FaMapMarkerAlt className="text-blue-600 text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500">Location</p>
+                  <p className="text-sm text-gray-300">Location</p>
                   <p className="text-gray-900">Nairobi, Kenya</p>
                 </div>
               </div>
@@ -174,13 +174,13 @@ const Contact = () => {
                   <FaCheck className="text-green-600 dark:text-green-400 text-2xl" />
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Message Sent!</h4>
-                <p className="text-gray-600 dark:text-gray-300">Thank you for reaching out. I'll get back to you soon!</p>
+                <p className="text-gray-400 dark:text-gray-300">Thank you for reaching out. I'll get back to you soon!</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 dark:text-gray-300 mb-2">
                       Name *
                     </label>
                     <input
@@ -195,7 +195,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 dark:text-gray-300 mb-2">
                       Email *
                     </label>
                     <input
@@ -212,7 +212,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-300 dark:text-gray-300 mb-2">
                     Subject *
                   </label>
                   <input
@@ -228,7 +228,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 dark:text-gray-300 mb-2">
                     Message *
                   </label>
                   <textarea
